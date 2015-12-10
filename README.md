@@ -1,4 +1,5 @@
-comac-ui-experiments
+COMAC Navigator Frontend
 ====================
 
-Experiments with various technologies for the COMAC Navigator UI
+UI part of the COMAC Navigator.
+
