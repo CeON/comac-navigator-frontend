@@ -66,7 +66,7 @@ namespace translations {
             elem.attr(target, newText);
 
         } else {
-            elem.text(newText);
+            elem.html(newText);
         }
     }
 
@@ -159,6 +159,50 @@ namespace translations {
         authors: {
             en: "Authors:",
             pl: "Autorzy:"
+        },
+        helpTabContent: {
+            en: `
+                <h5>Browsing graph</h5>
+                <p>
+                    <em>Double click on a node</em> to expand it, i.e.
+                    to add all of its neighobours.
+                </p>
+                <p>
+                    <em>Single click on a node</em> to view additional
+                    informations about a node.
+                </p>
+                <h5>Node types:</h5>
+                <div class="node-list">
+                    <div class="search-result journal">Journal</div>
+                    <div class="search-result dataset">Dataset</div>
+                    <div class="search-result project">Project</div>
+                    <div class="search-result paper">Paper</div>
+                    <div class="search-result institution">Institution</div>
+                    <div class="search-result author">Author</div>
+                    <div class="search-result blog">Blog</div>
+                </div>
+            `,
+            pl: `
+                <h5>Przeglądanie grafu</h5>
+                <p>
+                    <em>Kliknij podwójnie na węzęł</em>, aby go rozwinąć, tzn.
+                    dodać wszystkich jego sąsiadów do grafu.
+                </p>
+                <p>
+                    <em>Kliknij pojedynczo na węzeł</em>, aby uzyskać więcej
+                    informacji o węźle.
+                </p>
+                <h5>Typy węzłów:</h5>
+                <div class="node-list">
+                    <div class="search-result journal">Publikacja</div>
+                    <div class="search-result dataset">Zbiór danych</div>
+                    <div class="search-result project">Projekt</div>
+                    <div class="search-result paper">Publikacja</div>
+                    <div class="search-result institution">Organizacja</div>
+                    <div class="search-result author">Autor</div>
+                    <div class="search-result blog">Blog</div>
+                </div>
+            `
         }
     };
 }

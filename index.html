@@ -59,7 +59,8 @@
     <div class="tab-content">
         <div class="tab-pane fade in active" id="searchTab">
             <div id="search-form" class="input-group">
-                <input id="search-input" type="text" name="term" class="form-control"
+                <input id="search-input" type="text" name="term"
+                       class="form-control"
                        placeholder="..."
                        data-i18n="searchPlaceholder"
                        target-i18n="placeholder"
@@ -82,20 +83,36 @@
             </h4>
 
             <h5 data-i18n="abstract"></h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque. Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa nibh nec erat.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+                nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras
+                vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra
+                nulla ac diam. Quisque semper justo at risus. Donec venenatis,
+                turpis vel hendrerit interdum, dui ligula ultricies purus, sed
+                posuere libero dui id orci. Nam congue, pede vitae dapibus
+                aliquet, elit magna vulputate arcu, vel tempus metus leo non
+                est. Etiam sit amet lectus quis est congue mollis. Phasellus
+                congue lacus eget neque. Phasellus ornare, ante vitae
+                consectetuer consequat, purus sapien ultricies dolor, et mollis
+                pede metus eget nisi. Praesent sodales velit quis augue. Cras
+                suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in
+                interdum massa nibh nec erat.</p>
 
             <h5 data-i18n="publishedIn"></h5>
+
             <div class="node-list">
                 <div draggable="true" class="search-result journal">
                     <div draggable="true">
                         <div class="title"><span
-                                class="glyphicon glyphicon-arrow-right pull-right"></span>Scientific Reports
+                                class="glyphicon glyphicon-arrow-right pull-right"></span>Scientific
+                            Reports
                         </div>
                     </div>
                 </div>
             </div>
 
             <h5 data-i18n="authors"></h5>
+
             <div class="node-list">
                 <div draggable="true" class="search-result author">
                     <div draggable="true">
@@ -131,27 +148,7 @@
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="helpTab">
-            <h5>Browsing graph</h5>
-            <p>
-                <em>Double click on a node</em> to expand it, i.e.
-                to add all of its neighobours.
-            </p>
-            <p>
-                <em>Single click on a node</em> to view additional
-                informations about a node.
-            </p>
-            <h5>Node types:</h5>
-            <div class="node-list">
-                <div class="search-result journal">Journal</div>
-                <div class="search-result dataset">Dataset</div>
-                <div class="search-result project">Project</div>
-                <div class="search-result paper">Paper</div>
-                <div class="search-result institution">Institution</div>
-                <div class="search-result author">Author</div>
-                <div class="search-result blog">Blog</div>
-            </div>
-        </div>
+        <div class="tab-pane fade" id="helpTab" data-i18n="helpTabContent"></div>
     </div>
 </div>
 <div class="right layout-col">
