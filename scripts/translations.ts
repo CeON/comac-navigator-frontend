@@ -203,6 +203,24 @@ namespace translations {
                     <div class="search-result blog">Blog</div>
                 </div>
             `
+        },
+        aboutModalContent: {
+            en: `
+                <p><a href="http://adalab.icm.edu.pl/">ADA Lab</a></p>
+
+                <p><a href="http://icm.edu.pl/">ICM</a></p>
+                <h4>Disclaimers</h4>
+
+                <p>…</p>
+            `,
+            pl: `
+                <p><a href="http://adalab.icm.edu.pl/">ADA Lab</a></p>
+
+                <p><a href="http://icm.edu.pl/">ICM</a></p>
+                <h4>Ograniczenia</h4>
+
+                <p>…</p>
+            `
         }
     };
 }
