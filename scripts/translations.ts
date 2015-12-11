@@ -177,7 +177,7 @@ namespace translations {
                     <div class="search-result dataset">Dataset</div>
                     <div class="search-result project">Project</div>
                     <div class="search-result paper">Paper</div>
-                    <div class="search-result institution">Institution</div>
+                    <div class="search-result organization">Organisation</div>
                     <div class="search-result author">Author</div>
                     <div class="search-result blog">Blog</div>
                 </div>
@@ -198,7 +198,7 @@ namespace translations {
                     <div class="search-result dataset">Zbiór danych</div>
                     <div class="search-result project">Projekt</div>
                     <div class="search-result paper">Publikacja</div>
-                    <div class="search-result institution">Organizacja</div>
+                    <div class="search-result organization">Organizacja</div>
                     <div class="search-result author">Autor</div>
                     <div class="search-result blog">Blog</div>
                 </div>

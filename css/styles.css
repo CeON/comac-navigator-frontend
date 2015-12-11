@@ -29,15 +29,15 @@ g.paper.hover text {
     fill: #292;
 }
 
-g.institution rect {
+g.organization rect {
     fill: #0fa2aa;
 }
 
-g.institution.hover rect {
+g.organization.hover rect {
     stroke: #0fa2aa;
 }
 
-g.institution.hover text {
+g.organization.hover text {
     fill: #0fa2aa;
 }
 
@@ -242,14 +242,14 @@ g.hover rect {
     border-color: #292;
 }
 
-.search-result.institution,
-.search-result[class*="institution"] {
+.search-result.organization,
+.search-result[class*="organization"] {
     background: #0fa2aa;
     border-color: #0fa2aa;
 }
 
-.search-result.institution:hover,
-.search-result[class*="institution"]:hover {
+.search-result.organization:hover,
+.search-result[class*="organization"]:hover {
     background: white;
     color: #0fa2aa;
     border-color: #0fa2aa;
