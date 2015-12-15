@@ -3,20 +3,20 @@
  *
  * @author Michał Oniszczuk <m.oniszczuk@icm.edu.pl>
  */
+
 /**
  * Utility functions.
  *
  * @namespace
  */
-var util;
-(function (util) {
+namespace util {
     /**
      * Gets query string value for a given key.
      *
      * @param {string} key use this key to fetch a query string value
      * @returns {string} query string value for a given key
      */
-    function getQueryStringValue(key) {
+    export function getQueryStringValue(key) {
         var value = null;
         var url = window.location.search.substr(1);
         var keyValues = url.split(/[\?&]+/);
@@ -26,9 +26,8 @@ var util;
                 value = keyValue[1];
             }
         }
-        console.log("value is " + value);
+        console.log("value is " + value)
         return value;
     }
-    util.getQueryStringValue = getQueryStringValue;
-})(util || (util = {}));
-//# sourceMappingURL=util.js.map
+}
+

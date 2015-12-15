@@ -3,7 +3,9 @@
  *
  * @author Michał Oniszczuk <m.oniszczuk@icm.edu.pl>
  */
+
 ///<reference path="lib/jquery.d.ts" />
+
 /**
  * Creates an instance of ClearGraphController.
  *
@@ -11,13 +13,12 @@
  * @constructor
  * @this {ClearGraphController}
  */
-var ClearGraphController = (function () {
-    function ClearGraphController(graphController) {
+class ClearGraphController {
+    constructor(graphController) {
         $("#clearGraphConfirm").click(function () {
-            graphController.clearGraph();
+            graphController.clearGraph()
             console.log("Clear graph clicked.");
         });
     }
-    return ClearGraphController;
-})();
-//# sourceMappingURL=ClearGraphController.js.map
+}
+

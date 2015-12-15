@@ -3,27 +3,29 @@
  *
  * @author Michał Oniszczuk <m.oniszczuk@icm.edu.pl>
  */
+
 /**
  * Creates an instance of GraphModel.
  *
  * @constructor
  * @this {GraphModel}
  */
-var GraphModel = (function () {
-    function GraphModel() {
-    }
-    GraphModel.updateGraphModel = function (graphModel, graphJSON) {
+class GraphModel {
+
+    static updateGraphModel(graphModel, graphJSON) {
         //graphModel.favouriteIds = newFavouriteIds;
         graphModel.nodes = graphJSON.nodes;
         graphModel.favouriteIds = graphModel.nodes
             .filter(function (node) {
-            return node.favourite;
-        })
+                return node.favourite;
+            })
             .map(function (node) {
-            return node.id;
-        });
+                return node.id;
+            });
+
         graphModel.graphId = graphJSON.graphId;
         graphModel.links = nodeIdsToReferences(graphJSON.nodes, graphJSON.links);
+
         function nodeIdsToReferences(nodes, links) {
             return links.map(function (link) {
                 link.source = nodes.filter(function (node) {
@@ -36,16 +38,19 @@ var GraphModel = (function () {
                 return link;
             });
         }
-    };
-    GraphModel.repositionNodes = function (oldNodesRaw, newNodes) {
+    }
+
+    static repositionNodes(oldNodesRaw, newNodes) {
         var oldNodes = asDictionaryByIds(oldNodesRaw);
         newNodes.forEach(repositionSingleNode(oldNodes));
+
         function asDictionaryByIds(xs) {
             return xs.reduce(function (dict, item) {
                 dict[item.id] = item;
                 return dict;
             }, {});
         }
+
         function repositionSingleNode(oldNodes) {
             return function (newNode) {
                 var newNodeId = newNode.id;
@@ -54,9 +59,9 @@ var GraphModel = (function () {
                     newNode.x = copyFrom.x;
                     newNode.y = copyFrom.y;
                 }
-            };
+            }
         }
-    };
-    return GraphModel;
-})();
-//# sourceMappingURL=GraphModel.js.map
+    }
+
+
+}
