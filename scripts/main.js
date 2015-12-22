@@ -32,6 +32,7 @@ require(
         "GraphController",
         "GraphModel",
         "SidebarController",
+        "InfoTabController",
         "sidebar"
     ],
     function () {
@@ -40,18 +41,20 @@ require(
         var dataProvider = new DataProvider(
             config.URLBase + "graph.json",
             config.URLBase + "search",
-            config.URLBase + "graphById");
+            config.URLBase + "graphById",
+            config.URLBase + "details");
         var graphController = new GraphController(dataProvider, ["comac:pbn_9999"]);
         var sidebarController = new SidebarController(dataProvider, graphController);
 
         new CopyToClipboardController(ZeroClipboard);
         new LanguageSelectorController();
         new ClearGraphController(graphController);
+        var infoTabController = new InfoTabController(dataProvider, graphController);
 
         window.sidebar.dataProvider = dataProvider;
         window.sidebar.graphController = graphController;
         window.sidebar.init();
 
-        graphController.sidebarController = window.sidebar;
+        graphController.infoTabController = infoTabController;
     }); // require end
 

@@ -19,11 +19,13 @@ class DataProvider {
     private graph: string;
     private searchAddress: string;
     private graphById: string;
+    private details: string;
 
-    constructor(graphUri, searchUri, graphByIdUri) {
+    constructor(graphUri, searchUri, graphByIdUri, detailsUri) {
         this.graph = graphUri;
         this.searchAddress = searchUri;
         this.graphById = graphByIdUri;
+        this.details = detailsUri;
     }
 
     /**
@@ -71,10 +73,16 @@ class DataProvider {
      */
     search(textQuery: string, callback) {
         console.log("Search invoked, query=" + textQuery);
-        //now inwoke the ajax:
-
         DataProvider.queryJSON(this.searchAddress, textQuery, callback);
+    }
 
+    /**
+     * Gets node details (publish date, abstract, etc.).
+     * @param {string} nodeId
+     * @param callback
+     */
+    getNodeDetails(nodeId: string, callback) {
+        DataProvider.queryJSON(this.details, nodeId, callback);
     }
 
     static queryJSON(fileName: string, query: string, callback) {

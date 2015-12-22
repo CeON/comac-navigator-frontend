@@ -14,10 +14,11 @@
  * @param {string} graphByIdUri
  */
 var DataProvider = (function () {
-    function DataProvider(graphUri, searchUri, graphByIdUri) {
+    function DataProvider(graphUri, searchUri, graphByIdUri, detailsUri) {
         this.graph = graphUri;
         this.searchAddress = searchUri;
         this.graphById = graphByIdUri;
+        this.details = detailsUri;
     }
     /**
      * Provided graph consists of:
@@ -60,8 +61,15 @@ var DataProvider = (function () {
      */
     DataProvider.prototype.search = function (textQuery, callback) {
         console.log("Search invoked, query=" + textQuery);
-        //now inwoke the ajax:
         DataProvider.queryJSON(this.searchAddress, textQuery, callback);
+    };
+    /**
+     * Gets node details (publish date, abstract, etc.).
+     * @param {string} nodeId
+     * @param callback
+     */
+    DataProvider.prototype.getNodeDetails = function (nodeId, callback) {
+        DataProvider.queryJSON(this.details, nodeId, callback);
     };
     DataProvider.queryJSON = function (fileName, query, callback) {
         d3.json(fileName + "?query=" + encodeURIComponent(query), function (error, data) {

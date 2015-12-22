@@ -340,6 +340,18 @@ div.tooltip {
     margin-top: 2em;
 }
 
+/* About modal */
+.well {
+    margin: 0px;
+
+}
+
+#aboutLegal {
+    height: 150px;
+    overflow: scroll;
+
+}
+
 /* Align modal to center vertically */
 
 .modal {

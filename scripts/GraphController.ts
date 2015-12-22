@@ -8,6 +8,7 @@
 ///<reference path="lib/jquery.d.ts" />
 ///<reference path="util" />
 ///<reference path="GraphModel" />
+///<reference path="InfoTabController.ts"/>
 
 import ZoomEvent = d3.ZoomEvent;
 /**
@@ -25,7 +26,7 @@ class GraphController {
     private graphModel;
     private dataProvider;
     private force;
-    private sidebarController;
+    infoTabController:InfoTabController;
 
     constructor(dataProvider, initialNodes) {
         this.graphView = {};
@@ -250,7 +251,7 @@ class GraphController {
     }
 
     onSingleClick(d) {
-        this.sidebarController.showNodeInfo(d);
+        this.infoTabController.showNodeInfo(d);
     }
 
     onDoubleClick(d) {

@@ -41,15 +41,6 @@ window.sidebar.init = function () {
 
 };
 
-window.sidebar.showNodeInfo = function (node) {
-    console.log("Show node info for " + node.id);
-    $('#infoTab')
-        .empty()
-        .html('<h4>' + node.name + '</h4>');
-    $('a[href="#infoTab"]').tab('show');
-    //alert(nodeId);
-};
-
 window.sidebar.doSearch = function () {
     var query = d3.select("#search-input").property('value');
     //now clear results and append search div:
@@ -58,7 +49,7 @@ window.sidebar.doSearch = function () {
     //append searching text:
     $("#search-results").html("<div class='loading_message'>" +
         "<p data-i18n='searching'></p>" +
-        "<p><img src='images/preloader.gif'></img></p>" +
+        "<p><img src='images/preloader.gif'/></p>" +
         "</div>");
     translations.translateAll();
     $("#search-follow").empty();

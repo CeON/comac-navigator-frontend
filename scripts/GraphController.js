@@ -213,7 +213,7 @@ var GraphController = (function () {
         this.graphView.circles.exit().remove();
     };
     GraphController.prototype.onSingleClick = function (d) {
-        this.sidebarController.showNodeInfo(d);
+        this.infoTabController.showNodeInfo(d);
     };
     GraphController.prototype.onDoubleClick = function (d) {
         if (d.favourite) {
