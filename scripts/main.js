@@ -36,6 +36,7 @@ require(
         "sidebar"
     ],
     function () {
+        //$('#aboutModal').modal('toggle')
         translations.translateAll();
 
         var dataProvider = new DataProvider(
@@ -56,5 +57,5 @@ require(
         window.sidebar.init();
 
         graphController.infoTabController = infoTabController;
-    }); // require end
+    });
 

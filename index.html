@@ -150,7 +150,8 @@
                 </div>
             </div>-->
         </div>
-        <div class="tab-pane fade" id="helpTab" data-i18n="helpTabContent"></div>
+        <div class="tab-pane fade" id="helpTab"
+             data-i18n="helpTabContent"></div>
     </div>
 </div>
 <div class="right layout-col">
@@ -172,10 +173,10 @@
                 <button type="button" class="close" data-dismiss="modal"
                         aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">
+                <h3 class="modal-title">
                     <span class="glyphicon glyphicon-share-alt"></span>
                     <span data-i18n='shareGraph'></span>
-                </h4>
+                </h3>
             </div>
             <div class="modal-body">
                 <div class="input-group">
@@ -199,10 +200,10 @@
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">
+                <h3 class="modal-title">
                     <span class="glyphicon glyphicon-remove"></span>
                     <span data-i18n='clearGraph'></span>
-                </h4>
+                </h3>
             </div>
             <div class="modal-body">
                 <button type="button" class="btn btn-default"
@@ -218,22 +219,315 @@
 
 <!-- About Modal -->
 <div class="modal fade" id="aboutModal" tabindex="-1">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"
                         aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">
-                    <span class="glyphicon glyphicon-info-sign"></span>
+                <h3 class="modal-title">
+                    <!--<span class="glyphicon glyphicon-info-sign"></span>-->
                     <span data-i18n='about'></span>
-                </h4>
+                    <!--About COMAC Navigator-->
+                </h3>
             </div>
-            <div class="modal-body" data-i18n="aboutModalContent"></div>
-        </div>
-    </div>
-</div>
+            <div class="modal-body"><!--data-i18n="aboutModalContent"-->
+                <h2 class="lead-lg">
+                    COMAC&nbsp;Navigator provides a&nbsp;friendly interface for&nbsp;exploring
+                    the&nbsp;academic&nbsp;world.
+                </h2>
+                <!--<p>-->
+                <p class="lead">
+                    We brought together and unified several
+                    data sources describing people, publications, projects and
+                    datasets in order to draw an interactive map of academia.
+                    The map is a graph-like structure with nodes representing
+                    entities (people, publications, journals) and links
+                    representing relations between the entities.
+                </p>
+                <h4>Open Science</h4>
+                <p>
+                    We are strong supporters of open science, which is why
+                    we provide open access both to the web application and to
+                    the underlying dataset: the source code is
+                    <a href="https://github.com/CeON/" target="_blank">
+                        available on GitHub</a>, while the data is
+                    <a href="http://static.ceon.pl/comac/" target="_blank">
+                        available as a set of RDF triples</a>.
+                </p>
 
-<script data-main="scripts/main" src="scripts/lib/require.js"></script>
+                <h4>Authors</h4>
+                <p>
+                    This service was created by a team of
+                    <a target="_blank" href="http://www.icm.edu.pl/">ICM
+                        UW</a> employees, listed here in pseudorandom order
+                    (lexicographically by MD5 hashes of names): Łukasz
+                    Bolikowski, Piotr Dendek, Aleksander Nowiński, Jakub
+                    Jurkiewicz, Michał Oniszczuk, Michał Politowski and
+                    Artur
+                    Czeczko. Most team members work in the
+                    <a target="_blank" href="http://adalab.icm.edu.pl/">
+                        Applied Data Analysis Lab (ADA Lab)</a>.
+                </p>
+
+                <h4>Funding</h4>
+                <p>
+                    COMAC Navigator is one of the deliverables of the OCEAN
+                    project, funded by the Innovative Economy Operational
+                    Programme 2007–2013, measure 2.3.
+                </p>
+
+                <div class="expand-button">
+                    <a class="btn btn-default" role="button"
+                       data-toggle="collapse" href="#moreInfoContent"
+                       aria-expanded="false" aria-controls="moreInfoContent">
+                        <span class="glyphicon glyphicon-chevron-down">
+                        </span>
+                        More… (including legal information)
+                    </a>
+                </div>
+                <div class="collapse" id="moreInfoContent">
+
+                    <!--<p>-->
+                    <!--</p>-->
+
+                    <h4>Technologies used</h4>
+                    <h5>Backend:</h5>
+                    <ul>
+                        <li>
+                            Hadoop Ecosystem (Hadoop MapReduce, Apache Pig,
+                            Apache HBase, Apache Oozie just to mention a few)
+                        </li>
+                        <li>
+                            Apache Spark (Spark SQL, MLlib)
+                        </li>
+                    </ul>
+                    <h5>Frontend:</h5>
+                    <ul>
+                        <li>
+                            D3.js
+                        </li>
+                        <li>
+                            TypeScript
+                        </li>
+                        <li>
+                            Bootstrap
+                        </li>
+                        <li>
+                            jQuery
+                        </li>
+                    </ul>
+                    <h4>Projects used which were developed in ICM UW</h4>
+                    <ul>
+                        <li>
+                            <a target="_blank"
+                               href="https://github.com/CeON/CoAnSys">
+                                CoAnSys
+                            </a>
+                            — a framework for mining scientific publications
+                            using Apache Hadoop.
+                        </li>
+                        <li>
+                            <a target="_blank"
+                               href="https://github.com/CeON/oozie-maven-plugin">
+                                Oozie Maven Plugin
+                            </a>
+                            — tool created to simplify the creation of packages
+                            (tar.gz files) containing
+                            workflow definition of Apache Oozie as well as
+                            all other files needed to run a workflow
+                            (configuration files, libraries, etc.).
+                        </li>
+                        <li>
+                            <a target="_blank"
+                               href="https://github.com/CeON/oozie-runner">
+                                Oozie Runner
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank"
+                               href="https://github.com/CeON/comac-navigator-backend">
+                                COMAC Navigator Backend
+                            </a>
+                            — REST service providing data for the COMAC
+                            Navigator Frontend.
+                        </li>
+                        <li>
+                            <a target="_blank"
+                               href="https://github.com/CeON/comac-navigator-frontend">
+                                COMAC Navigator Frontend
+                            </a>
+                            — UI part of the COMAC Navigator.
+                        </li>
+                        <!--<li>-->
+                            <!--<a target="_blank" href="">-->
+
+                            <!--</a>-->
+                        <!--</li>-->
+                    </ul>
+
+                    <h4>Data sources</h4>
+                    <table class="table table-striped" id="sourcesTable">
+                        <thead>
+                        <tr>
+                            <th>Project</th>
+                            <!--<th>Project home page</th>-->
+                            <th>Data used</th>
+                            <!--<th>Data version</th>-->
+                            <!--<th>Download date</th>-->
+                            <th>Data&nbsp;version&nbsp;/ Download&nbsp;date</th>
+                            <!--<th>Data address</th>-->
+                            <th width="40%">Licence</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row"><a
+                                    target="_blank"
+                                    href="http://www.ncbi.nlm.nih.gov/pubmed">
+                                MEDLINE<sup>®</sup>
+                            </a></th>
+                            <td>documents</td>
+                            <td>02-2014</td>
+                            <td>
+                                Medline Licence, data is shown only in
+                                Navigator,
+                                not available as triples
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><a
+                                    target="_blank"
+                                    href="http://www.ncbi.nlm.nih.gov/pmc/">
+                                PMC: Open Access subset
+                            </a></th>
+                            <td>documents</td>
+                            <td><a target="_blank"
+                                   href="http://www.ncbi.nlm.nih.gov/pmc/tools/openftlist/">
+                                27-06-2015
+                            </a></td>
+                            <td><a target="_blank"
+                                   href="http://creativecommons.org/about/license/">
+                                Creative Commons
+                            </a>
+                                or similar licence
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><a
+                                    target="_blank"
+                                    href="http://www.openaire.eu">
+                                OpenAIRE
+                            </a></th>
+                            <td>documents, organisations,<br/>projects, persons
+                            </td>
+                            <td><a target="_blank"
+                                   href="http://api.openaire.eu/oai_pmh">
+                                19-10-2015
+                            </a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><a
+                                    target="_blank"
+                                    href="https://www.datacite.org/">
+                                DataCite
+                            </a></th>
+                            <td>datasets</td>
+                            <td><a target="_blank"
+                                   href="http://oai.datacite.org/oai">
+                                21-09-2015
+                            </a></td>
+                            <td>CC BY 4.0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><a
+                                    target="_blank"
+                                    href="http://orcid.org/">
+                                ORCID
+                            </a></th>
+                            <td>persons in documents</td>
+                            <td><a target="_blank"
+                                   href="https://orcid.org/content/orcid-public-data-file">
+                                2014
+                            </a></td>
+                            <td>CC0 1.0 Public Domain Dedication</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><a
+                                    target="_blank"
+                                    href="http://www.crossref.org/">
+                                CrossRef
+                            </a></th>
+                            <td>Augmenting metadata<br/>from other collections
+                            </td>
+                            <td><a target="_blank"
+                                   href="">
+
+                            </a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><a
+                                    target="_blank"
+                                    href="http://arxiv.org/">
+                                arXiv
+                            </a></th>
+                            <td>documents, citations<br/>from PDF files</td>
+                            <td><a target="_blank"
+                                   href="http://export.arxiv.org/oai2">
+                                03-07-2015
+                            </a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><a
+                                    target="_blank"
+                                    href="https://doaj.org/">
+                                Directory Of Open Access Journals
+                            </a></th>
+                            <td>documents</td>
+                            <td><a target="_blank"
+                                   href="https://doaj.org/oai.article">
+                                13-10-2015
+                            </a></td>
+                            <td>CC BY-SA</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><a
+                                    target="_blank"
+                                    href="">
+                                Blogs crawling
+                            </a></th>
+                            <td>blogs</td>
+                            <td>11-2015</td>
+                            <td>Data crawled from the Internet</td>
+                        </tr>
+                        <!--<tr>-->
+                        <!--<th scope="row"><a-->
+                        <!--target="_blank"-->
+                        <!--href="">-->
+
+                        <!--</a></th>-->
+                        <!--<td>documents</td>-->
+                        <!--<td><a target="_blank"-->
+                        <!--href="">-->
+
+                        <!--</a></td>-->
+                        <!--<td></td>-->
+                        <!--</tr>-->
+                        </tbody>
+                    </table>
+                    <!--<div class="well">-->
+                    <!--<div id="aboutLegal">-->
+                    <!--<div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                </div>
+            </div>
+
+            <script data-main="scripts/main"
+                    src="scripts/lib/require.js"></script>
 
 </body>
