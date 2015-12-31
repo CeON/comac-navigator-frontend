@@ -18,8 +18,6 @@ requirejs.config({
 
 require(
     [
-        "lib/ZeroClipboard",
-        "CopyToClipboardController",
         "LanguageSelectorController",
         "ClearGraphController",
         "config",
@@ -47,7 +45,6 @@ require(
         var graphController = new GraphController(dataProvider, ["comac:pbn_9999"]);
         var sidebarController = new SidebarController(dataProvider, graphController);
 
-        new CopyToClipboardController(ZeroClipboard);
         new LanguageSelectorController();
         new ClearGraphController(graphController);
         var infoTabController = new InfoTabController(dataProvider, graphController);

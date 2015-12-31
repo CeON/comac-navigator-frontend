@@ -7,9 +7,8 @@ The frontend runs in the browser and connects over HTTP to the [COMAC Navigator 
 ## How to run
 
 1. Run [COMAC Navigator Backend](https://github.com/CeON/comac-navigator-backend).
-2. If necessary edit the url pointing to the Backend. The dafault value is appropriate when the Backend is run on the `localhost` using the default port. 
- The config file is `scripts/config.js`.
-3. Serve in any way you like (for example using an Apache HTTP Server) or simply open `index.html` locally in your browser (though ZeroClipboard will not work if the address in browser begins with `file://`).
+2. If necessary edit the url pointing to the Backend. The dafault value is appropriate when the Backend is run on the `localhost` using the default port. The config file is `scripts/config.js`.
+3. Serve in any way you like (for example using an Apache HTTP Server) or simply open `index.html` locally in your browser.
 
 ## Documentation
 
@@ -39,4 +38,3 @@ This application was tested on:
 * RequireJS 2.1.15 for handling modules & libraries (JavaScript doesn't have built-in code module support),
 * Bootstrap 3.1.1 for UI elements (Buttons, Icons, etc.), CSS and Bootstrap jQuery plugin (for Modals, Dropdowns & Tabs),
 * jQuery 2.0.3 for manipulating DOM elements,
-* ZeroClipboard 2.2.0 for copying text to clipboard (Share graph functionality).  
