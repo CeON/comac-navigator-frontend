@@ -5,11 +5,13 @@
  */
 ///<reference path="DataProvider.ts"/>
 ///<reference path="GraphController.ts"/>
+///<reference path="NodeListsController.ts"/>
 ///<reference path="translations.ts"/>
 var InfoTabController = (function () {
-    function InfoTabController(dataProvider, graphController) {
+    function InfoTabController(dataProvider, graphController, nodeListsController) {
         this.dataProvider = dataProvider;
         this.graphController = graphController;
+        this.nodeListsController = nodeListsController;
     }
     InfoTabController.prototype.showNodeInfo = function (node) {
         console.log("InfoTabController.showNodeInfo(" + node.id + ")");
@@ -27,7 +29,16 @@ var InfoTabController = (function () {
             .tab('show');
     };
     InfoTabController.prototype.showDetails = function (nodeId) {
-        this.dataProvider.getNodeDetails(nodeId, this.showDetailsCallback);
+        this.dataProvider.getNodeDetails(nodeId, this.showDetailsCallback.bind(this));
+    };
+    InfoTabController.prototype.showAuthors = function (details) {
+        var attribute = "Authors";
+        if (attribute in details) {
+            $('#infoTab')
+                .append('<h5 data-i18n="header' + attribute + '"></h5>')
+                .append('<div id="author-list" class="node-list"></div>');
+            this.nodeListsController.refreshNodeList("#author-list", details[attribute]);
+        }
     };
     InfoTabController.prototype.showDetailsCallback = function (error, details) {
         $('#detailsLoadingMessage').remove();
@@ -41,7 +52,7 @@ var InfoTabController = (function () {
                 "Abstract",
                 "GivenName",
                 "FamilyName",
-                /* "Name", */
+                /* "name", */
                 "Email",
                 "Source",
                 "References",
@@ -54,6 +65,7 @@ var InfoTabController = (function () {
                 }
             }
             possibleAttributes.forEach(function (attribute) { return showOneDetail(attribute, details); });
+            this.showAuthors(details);
         }
         else {
             console.error("Failed to get node details. Got an error: " + error);

@@ -6,12 +6,14 @@
 
 ///<reference path="DataProvider.ts"/>
 ///<reference path="GraphController.ts"/>
+///<reference path="NodeListsController.ts"/>
 ///<reference path="translations.ts"/>
 
 
 class InfoTabController {
     constructor(private dataProvider:DataProvider,
-                private graphController:GraphController) {
+                private graphController:GraphController,
+                private nodeListsController:NodeListsController) {
     }
 
     showNodeInfo(node):void {
@@ -33,12 +35,24 @@ class InfoTabController {
     }
 
     private showDetails(nodeId:string):void {
-        this.dataProvider.getNodeDetails(nodeId, this.showDetailsCallback);
+        this.dataProvider.getNodeDetails(nodeId, this.showDetailsCallback.bind(this));
+    }
+
+    private showAuthors(details):void {
+        var attribute = "Authors";
+        if (attribute in details) {
+            $('#infoTab')
+                .append('<h5 data-i18n="header' + attribute + '"></h5>')
+                .append('<div id="author-list" class="node-list"></div>')
+            ;
+            this.nodeListsController.refreshNodeList("#author-list", details[attribute]);
+        }
     }
 
     private showDetailsCallback(error, details) {
         $('#detailsLoadingMessage').remove();
         if (error === null) {
+
             var possibleAttributes:string[] =
                 [
                     "Date",
@@ -49,7 +63,7 @@ class InfoTabController {
                     "Abstract",
                     "GivenName",
                     "FamilyName",
-                    /* "Name", */
+                    /* "name", */
                     "Email",
                     "Source",
                     "References",
@@ -67,6 +81,7 @@ class InfoTabController {
             possibleAttributes.forEach(
                 attribute => showOneDetail(attribute, details)
             );
+            this.showAuthors(details);
         } else {
             console.error(
                 "Failed to get node details. Got an error: " + error);

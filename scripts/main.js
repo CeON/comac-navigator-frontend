@@ -31,7 +31,8 @@ require(
         "GraphModel",
         "SidebarController",
         "InfoTabController",
-        "sidebar"
+        "NodeListsController",
+        "sidebar",
     ],
     function () {
         //$('#aboutModal').modal('toggle')
@@ -47,10 +48,12 @@ require(
 
         new LanguageSelectorController();
         new ClearGraphController(graphController);
-        var infoTabController = new InfoTabController(dataProvider, graphController);
+        var nodeListsController = new NodeListsController(graphController);
+        var infoTabController = new InfoTabController(dataProvider, graphController, nodeListsController);
 
         window.sidebar.dataProvider = dataProvider;
         window.sidebar.graphController = graphController;
+        window.sidebar.nodeListsController = nodeListsController;
         window.sidebar.init();
 
         graphController.infoTabController = infoTabController;
