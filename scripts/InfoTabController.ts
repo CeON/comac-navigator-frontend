@@ -42,6 +42,7 @@ class InfoTabController {
             var possibleAttributes:string[] =
                 [
                     "Date",
+                    "Subject",
                     /* "Title", */
                     "ISSN",
                     "DOI",
@@ -50,6 +51,8 @@ class InfoTabController {
                     "FamilyName",
                     /* "Name", */
                     "Email",
+                    "Source",
+                    "References",
                 ];
 
             function showOneDetail(attribute:string, details):void {

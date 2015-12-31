@@ -34,6 +34,7 @@ var InfoTabController = (function () {
         if (error === null) {
             var possibleAttributes = [
                 "Date",
+                "Subject",
                 /* "Title", */
                 "ISSN",
                 "DOI",
@@ -42,6 +43,8 @@ var InfoTabController = (function () {
                 "FamilyName",
                 /* "Name", */
                 "Email",
+                "Source",
+                "References",
             ];
             function showOneDetail(attribute, details) {
                 if (attribute in details) {

@@ -148,6 +148,10 @@ var translations;
             en: "Date published:",
             pl: "Data publikacji:"
         },
+        headerSubject: {
+            en: "Subject:",
+            pl: "Temat:"
+        },
         headerISSN: {
             en: "ISSN:",
             pl: "ISSN:"
@@ -175,6 +179,14 @@ var translations;
         headerPublishedIn: {
             en: "Published in:",
             pl: "Opublikowano w:"
+        },
+        headerSource: {
+            en: "Source:",
+            pl: "Źródło:"
+        },
+        headerReferences: {
+            en: "References:",
+            pl: "Referencje:"
         },
         headerAuthors: {
             en: "Authors:",
