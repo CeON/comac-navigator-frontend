@@ -19,30 +19,46 @@ class NodeListsController {
     }
 
     private appendSearchResultEntries(containerId:string, documents) {
-        var oldData = d3.select(containerId).selectAll("div")
-            .data();
-        var newData = oldData.concat(documents);
-        var diventer = d3.select(containerId).selectAll("div")
-            .data(newData)
-            .enter().append("div");
-        diventer.attr("class", function (d) {
-            return "search-result " + d.type
-        });
-        diventer
+        documents.forEach(d =>
+            d.isFav = this.graphController.containsFavouriteNode(d.id)
+        );
+
+        // DATA JOIN
+        var entry = d3.select(containerId).selectAll("div")
+            .data(documents);
+
+        // ENTER
+        entry.enter().append("div")
+            .attr("class", function (d) {
+                return "search-result " + d.type;
+            })
             .on("click", (function (d) {
-                console.log("Clicked an entry to add: " + d.id);
-                this.graphController.addFavouriteNodes([d.id]);
-            }).bind(this));
-        diventer
-            .append("div")
-            .html(function (d) {
-                    return "<div class='title'>" +
-                        "<span class='glyphicon glyphicon-arrow-right pull-right'></span>" +
-                        d.name +
-                        "</div>";
+                if (!d.isFav) {
+                    console.log("Clicked an entry to add: " + d.id);
+                    this.graphController.addFavouriteNodes([d.id]);
                 }
+                this.appendSearchResultEntries(containerId, documents);
+            }).bind(this));
+
+        // ENTER + UPDATE
+        entry
+            .html((function (d) {
+                    if (d.isFav) {
+                        return "<span class='title'>" +
+                            d.name +
+                            "</span>";
+                    } else {
+                        return "<span class='title'>" +
+                            "<span class='glyphicon glyphicon-arrow-right pull-right'></span>" +
+                            d.name +
+                            "</span>";
+                    }
+                }).bind(this)
             );
 
-    };
+        // EXIT
+        // Remove old elements as needed.
+        entry.exit().remove();
+    }
 
 }

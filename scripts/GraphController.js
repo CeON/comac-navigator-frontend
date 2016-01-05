@@ -225,7 +225,11 @@ var GraphController = (function () {
     };
     GraphController.prototype.addFavouriteNodes = function (newNodeIds) {
         var newFavouriteIds = this.graphModel.favouriteIds.concat(newNodeIds);
+        this.graphModel.favouriteIds = newFavouriteIds;
         this.setFavouriteNodes(newFavouriteIds);
+    };
+    GraphController.prototype.containsFavouriteNode = function (nodeId) {
+        return $.inArray(nodeId, this.graphModel.favouriteIds) != -1;
     };
     GraphController.prototype.removeFavouriteNodes = function (deletedNodeIds) {
         var newFavouriteIds = this.graphModel.favouriteIds

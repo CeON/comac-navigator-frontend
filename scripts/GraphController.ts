@@ -265,7 +265,12 @@ class GraphController {
     addFavouriteNodes(newNodeIds) {
         var newFavouriteIds =
             this.graphModel.favouriteIds.concat(newNodeIds);
+        this.graphModel.favouriteIds = newFavouriteIds;
         this.setFavouriteNodes(newFavouriteIds);
+    }
+
+    containsFavouriteNode(nodeId:string):boolean {
+        return $.inArray(nodeId, this.graphModel.favouriteIds) != -1;
     }
 
     removeFavouriteNodes(deletedNodeIds) {
