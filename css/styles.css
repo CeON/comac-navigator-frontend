@@ -282,6 +282,10 @@ g.hover rect {
     margin-right: 6px;
 }
 
+.search-result.favourite {
+    opacity: .5;
+}
+
 .search-result .title span {
     margin: 2px 0 2px 2px;
 }

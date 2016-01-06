@@ -25,21 +25,31 @@ var NodeListsController = (function () {
             .data(documents);
         // ENTER
         entry.enter().append("div")
-            .attr("class", function (d) {
-            return "search-result " + d.type;
-        })
             .on("click", (function (d) {
             if (!d.isFav) {
                 console.log("Clicked an entry to add: " + d.id);
                 this.graphController.addFavouriteNodes([d.id]);
             }
+            else {
+                console.log("Clicked an entry to remove: " + d.id);
+                this.graphController.removeFavouriteNodes([d.id]);
+            }
             this.appendSearchResultEntries(containerId, documents);
         }).bind(this));
         // ENTER + UPDATE
         entry
+            .attr("class", function (d) {
+            if (d.isFav) {
+                return "search-result " + d.type + " favourite";
+            }
+            else {
+                return "search-result " + d.type + " not-favourite";
+            }
+        })
             .html((function (d) {
             if (d.isFav) {
                 return "<span class='title'>" +
+                    "<span class='glyphicon glyphicon-remove pull-right'></span>" +
                     d.name +
                     "</span>";
             }

@@ -278,6 +278,7 @@ class GraphController {
                 .filter(function (id) {
                     return !arrayContains(deletedNodeIds, id);
                 });
+        this.graphModel.favouriteIds = newFavouriteIds;
         this.setFavouriteNodes(newFavouriteIds);
 
         function arrayContains(xs, x) {
