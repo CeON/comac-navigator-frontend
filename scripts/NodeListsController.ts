@@ -35,7 +35,7 @@ class NodeListsController {
                     this.graphController.addFavouriteNode(d.id);
                 } else {
                     console.log("Clicked an entry to remove: " + d.id);
-                    this.graphController.removeFavouriteNodes([d.id]);
+                    this.graphController.removeFavouriteNode(d.id);
                 }
                 this.appendSearchResultEntries(containerId, documents);
             }).bind(this));

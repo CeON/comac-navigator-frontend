@@ -217,7 +217,7 @@ var GraphController = (function () {
     };
     GraphController.prototype.onDoubleClick = function (d) {
         if (d.favourite) {
-            this.removeFavouriteNodes([d.id]);
+            this.removeFavouriteNode(d.id);
         }
         else {
             this.addFavouriteNode(d.id);
@@ -235,15 +235,17 @@ var GraphController = (function () {
     GraphController.prototype.containsFavouriteNode = function (nodeId) {
         return $.inArray(nodeId, this.graphModel.favouriteIds) != -1;
     };
-    GraphController.prototype.removeFavouriteNodes = function (deletedNodeIds) {
-        var newFavouriteIds = this.graphModel.favouriteIds
-            .filter(function (id) {
-            return !arrayContains(deletedNodeIds, id);
-        });
-        this.graphModel.favouriteIds = newFavouriteIds;
-        this.setFavouriteNodes(newFavouriteIds);
-        function arrayContains(xs, x) {
-            return xs.indexOf(x) > -1;
+    GraphController.prototype.removeFavouriteNode = function (nodeId) {
+        if (this.containsFavouriteNode(nodeId)) {
+            var newFavouriteIds = this.graphModel.favouriteIds
+                .filter(function (id) {
+                return id != nodeId;
+            });
+            this.graphModel.favouriteIds = newFavouriteIds;
+            this.setFavouriteNodes(newFavouriteIds);
+        }
+        else {
+            console.log("Tried to remove node which is not favourite: " + nodeId);
         }
     };
     GraphController.prototype.setFavouriteNodes = function (newFavouriteIds) {
