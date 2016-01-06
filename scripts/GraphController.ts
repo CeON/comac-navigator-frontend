@@ -263,8 +263,7 @@ class GraphController {
     }
 
     addFavouriteNodes(newNodeIds) {
-        var newFavouriteIds =
-            this.graphModel.favouriteIds.concat(newNodeIds);
+        var newFavouriteIds = this.graphModel.favouriteIds.concat(newNodeIds);
         this.graphModel.favouriteIds = newFavouriteIds;
         this.setFavouriteNodes(newFavouriteIds);
     }
@@ -296,19 +295,14 @@ class GraphController {
         this.setFavouriteNodes([]);
     }
 
-    //uses url to locate graph for page. If there is no 'graph' request key in url, then empty
-    //graph is loaded.
+    /**
+     * Uses url to locate graph for page. If there is no 'graph' request key in
+     * url, then empty graph is loaded.
+     */
     loadInitialGraph() {
         console.log("Loading initial graph...");
         var graphId = util.getQueryStringValue("graph");
-
-        //now request initial graphs:
-        if (graphId) {
-            this.dataProvider.getGraphById(graphId,
-                this.updateGraph().bind(this));
-        } else {
-            this.clearGraph();
-        }
+        this.dataProvider.getGraphById(graphId, this.updateGraph().bind(this));
     }
 
     static shortenString(str) {

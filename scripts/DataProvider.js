@@ -4,6 +4,7 @@
  * @author Michał Oniszczuk <m.oniszczuk@icm.edu.pl>
  */
 ///<reference path="lib/d3.d.ts" />
+var EMPTY_GRAPH_RESULT = { "graphId": null, "nodes": [], "links": [] };
 /**
  * Creates an instance of DataProvider.
  *
@@ -38,8 +39,13 @@ var DataProvider = (function () {
      * @param {DataProvider~graphCallback} callback continuation
      */
     DataProvider.prototype.getGraphByFavouriteIds = function (favouriteIds, callback) {
-        var query = favouriteIds.sort().join("|");
-        DataProvider.queryJSON(this.graph, query, callback);
+        if (favouriteIds.length > 0) {
+            var query = favouriteIds.sort().join("|");
+            DataProvider.queryJSON(this.graph, query, callback);
+        }
+        else {
+            callback(null, EMPTY_GRAPH_RESULT);
+        }
     };
     /**
      * Gets a graph by its id.
@@ -47,7 +53,12 @@ var DataProvider = (function () {
      * @param {DataProvider~graphCallback} callback
      */
     DataProvider.prototype.getGraphById = function (graphId, callback) {
-        DataProvider.queryJSON(this.graphById, graphId, callback);
+        if (graphId) {
+            DataProvider.queryJSON(this.graphById, graphId, callback);
+        }
+        else {
+            callback(null, EMPTY_GRAPH_RESULT);
+        }
     };
     /**
      * @callback DataProvider~searchCallback

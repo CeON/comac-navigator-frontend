@@ -247,18 +247,14 @@ var GraphController = (function () {
     GraphController.prototype.clearGraph = function () {
         this.setFavouriteNodes([]);
     };
-    //uses url to locate graph for page. If there is no 'graph' request key in url, then empty
-    //graph is loaded.
+    /**
+     * Uses url to locate graph for page. If there is no 'graph' request key in
+     * url, then empty graph is loaded.
+     */
     GraphController.prototype.loadInitialGraph = function () {
         console.log("Loading initial graph...");
         var graphId = util.getQueryStringValue("graph");
-        //now request initial graphs:
-        if (graphId) {
-            this.dataProvider.getGraphById(graphId, this.updateGraph().bind(this));
-        }
-        else {
-            this.clearGraph();
-        }
+        this.dataProvider.getGraphById(graphId, this.updateGraph().bind(this));
     };
     GraphController.shortenString = function (str) {
         if (str.length > 17) {
