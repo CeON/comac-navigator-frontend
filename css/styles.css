@@ -144,6 +144,18 @@ g.blog.hover text {
     fill: #671eba;
 }
 
+g.blog_entry rect {
+    fill: #671eba;
+}
+
+g.blog_entry.hover rect {
+    stroke: #671eba;
+}
+
+g.blog_entry.hover text {
+    fill: #671eba;
+}
+
 g.project rect {
     fill: #e2ac05;
 }
@@ -363,6 +375,19 @@ g.hover rect {
 
 .search-result.blog:hover,
 .search-result[class*="blog"]:hover {
+    background: white;
+    color: #671eba;
+    border-color: #671eba;
+}
+
+.search-result.blog_entry,
+.search-result[class*="blog_entry"] {
+    background: #671eba;
+    border-color: #671eba;
+}
+
+.search-result.blog_entry:hover,
+.search-result[class*="blog_entry"]:hover {
     background: white;
     color: #671eba;
     border-color: #671eba;
