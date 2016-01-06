@@ -28,7 +28,7 @@ var NodeListsController = (function () {
             .on("click", (function (d) {
             if (!d.isFav) {
                 console.log("Clicked an entry to add: " + d.id);
-                this.graphController.addFavouriteNodes([d.id]);
+                this.graphController.addFavouriteNode(d.id);
             }
             else {
                 console.log("Clicked an entry to remove: " + d.id);

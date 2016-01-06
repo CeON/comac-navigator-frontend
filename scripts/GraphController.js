@@ -220,13 +220,17 @@ var GraphController = (function () {
             this.removeFavouriteNodes([d.id]);
         }
         else {
-            this.addFavouriteNodes([d.id]);
+            this.addFavouriteNode(d.id);
         }
     };
-    GraphController.prototype.addFavouriteNodes = function (newNodeIds) {
-        var newFavouriteIds = this.graphModel.favouriteIds.concat(newNodeIds);
-        this.graphModel.favouriteIds = newFavouriteIds;
-        this.setFavouriteNodes(newFavouriteIds);
+    GraphController.prototype.addFavouriteNode = function (nodeId) {
+        if (this.containsFavouriteNode(nodeId)) {
+            console.log("Tried to add node which is already favourite: " + nodeId);
+        }
+        else {
+            this.graphModel.favouriteIds.push(nodeId);
+            this.setFavouriteNodes(this.graphModel.favouriteIds);
+        }
     };
     GraphController.prototype.containsFavouriteNode = function (nodeId) {
         return $.inArray(nodeId, this.graphModel.favouriteIds) != -1;
