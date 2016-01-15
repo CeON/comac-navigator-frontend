@@ -106,7 +106,7 @@ namespace translations {
         },
         searchPlaceholder: {
             en: "Author/Paper/Dataset ...",
-            pl: "Autor/Praca/Dane ..."
+            pl: "Autor/Publikacja/Dane ..."
         },
         searchTab: {
             en: "Search",
@@ -246,7 +246,7 @@ namespace translations {
                 </p>
                 <h5>Typy węzłów:</h5>
                 <div class="node-list">
-                    <div class="search-result journal">Publikacja</div>
+                    <div class="search-result journal">Czasopismo</div>
                     <div class="search-result dataset">Zbiór danych</div>
                     <div class="search-result project">Projekt</div>
                     <div class="search-result paper">Publikacja</div>
