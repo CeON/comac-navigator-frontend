@@ -303,6 +303,10 @@ namespace translations {
                     Programme 2007–2013, measure 2.3.
                 </p>
 
+                <p>
+                    <img src="images/ocean.png" width="277" height="85"/>
+                </p>
+
                 <div class="expand-button">
                     <a class="btn btn-default" role="button"
                        data-toggle="collapse" href="#moreInfoContent"
@@ -577,6 +581,10 @@ namespace translations {
                     COMAC Navigator jest jednym z wyników projektu OCEAN,
                     sfinansowanego z Programu Operacyjnego Innowacyjna
                     Gospodarka, działanie 2.3.
+                </p>
+
+                <p>
+                    <img src="images/ocean.png" width="277" height="85"/>
                 </p>
 
                 <div class="expand-button">
