@@ -192,6 +192,10 @@ var translations;
             en: "Authors:",
             pl: "Autorzy:"
         },
+        fundingFooter: {
+            en: "\n                <img src=\"images/en/po-ig.jpg\" width=\"284\" height=\"111\"/>\n                <p class=\"small text-center\">\n                    Some parts of this software were created with cofinancing\n                    from the European Union funds as part of the European\n                    Regional Development Fund\n                </p>\n                <img src=\"images/en/UE_EFRR_rgb-1.jpg\" width=\"284\" height=\"93\"/>\n            ",
+            pl: "\n                <img src=\"images/pl/po-ig.jpg\" width=\"284\" height=\"111\"/>\n                <p class=\"small text-center\">\n                    Wybrane oprogramowanie powsta\u0142o przy wsp\u00F3\u0142finansowaniu ze\n                    \u015Brodk\u00F3w Unii&nbsp;Europejskiej w ramach Europejskiego\n                    Funduszu Rozwoju Regionalnego\n                </p>\n                <img src=\"images/pl/UE_EFRR_rgb-1.jpg\" width=\"284\" height=\"93\"/>\n            "
+        },
         infoTabContent: {
             en: "\n                <h5>Node details</h5>\n                <p>\n                    <em>Single click on a node</em> to view additional\n                    informations about a node in this tab.\n                </p>\n            ",
             pl: "\n                <h5>Szczeg\u00F3\u0142y w\u0119z\u0142a</h5>\n                <p>\n                    <em>Kliknij pojedynczo na w\u0119ze\u0142</em>, aby wy\u015Bwietli\u0107 w tej\n                    zak\u0142adce wi\u0119cej informacji o w\u0119\u017Ale.\n                </p>\n            "

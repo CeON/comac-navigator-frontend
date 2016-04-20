@@ -196,6 +196,26 @@ namespace translations {
             en: "Authors:",
             pl: "Autorzy:"
         },
+        fundingFooter: {
+            en: `
+                <img src="images/en/po-ig.jpg" width="284" height="111"/>
+                <p class="small text-center">
+                    Some parts of this software were created with cofinancing
+                    from the European Union funds as part of the European
+                    Regional Development Fund
+                </p>
+                <img src="images/en/UE_EFRR_rgb-1.jpg" width="284" height="93"/>
+            `,
+            pl: `
+                <img src="images/pl/po-ig.jpg" width="284" height="111"/>
+                <p class="small text-center">
+                    Wybrane oprogramowanie powstało przy współfinansowaniu ze
+                    środków Unii&nbsp;Europejskiej w ramach Europejskiego
+                    Funduszu Rozwoju Regionalnego
+                </p>
+                <img src="images/pl/UE_EFRR_rgb-1.jpg" width="284" height="93"/>
+            `
+        },
         infoTabContent: {
             en: `
                 <h5>Node details</h5>
