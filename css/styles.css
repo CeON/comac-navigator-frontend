@@ -216,12 +216,12 @@ g.hover rect {
 
 .left.layout-col {
     overflow: scroll;
-    width: 285px;
+    width: 295px;
     left: 0
 }
 
 .right.layout-col {
-    left: 285px;
+    left: 295px;
     right: 0;
 }
 
